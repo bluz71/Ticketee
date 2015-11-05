@@ -37,6 +37,9 @@ group :development, :test do
   gem 'byebug'
 
   gem "rspec-rails", "~> 3.2.1"
+
+  # Nicer 'rails console'.
+  gem 'irbtools-more', require: 'irbtools/binding'
 end
 
 group :development do
