@@ -13,4 +13,19 @@ class User < ActiveRecord::Base
   def archive
     update(archived_at: Time.now)
   end
+
+  # Extend devise to disallow authentication for users with the archived column
+  # set.
+  def active_for_authentication?
+    super && archived_at.nil?
+  end
+
+  # The message to display when devise authentication fails, extended with
+  # support for user archiving.
+  #
+  # Note, the addition of :archived requires an error message be added to the
+  # file config/locales/devise.en.yml
+  def inactive_message
+    archived_at.nil? ? super : :archived
+  end
 end
