@@ -1,6 +1,11 @@
 class Admin::UsersController < Admin::ApplicationController
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
+
   def index
     @users = User.order(:email)
+  end
+
+  def show
   end
 
   def new
@@ -19,9 +24,32 @@ class Admin::UsersController < Admin::ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    # Remove blank passwords from the user paramaters. A blank password is
+    # interpreted as "don't change password."
+    if params[:user][:password].blank?
+      params[:user].delete(:password)
+    end
+
+    if @user.update(user_params)
+      flash[:notice] = "User has been updated."
+      redirect_to admin_users_path
+    else
+      flash.now[:alert] = "User has not been updated."
+      render "edit"
+    end
+  end
+
   private
 
     def user_params
       params.require(:user).permit(:email, :password, :admin)
+    end
+
+    def find_user
+      @user = User.find(params[:id])
     end
 end
