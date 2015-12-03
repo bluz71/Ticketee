@@ -158,6 +158,8 @@ GEM
     orm_adapter (0.5.0)
     os (0.9.6)
     paint (1.0.0)
+    pundit (0.3.0)
+      activesupport (>= 3.0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -269,6 +271,7 @@ DEPENDENCIES
   irbtools-more
   jbuilder (~> 2.0)
   jquery-rails
+  pundit (~> 0.3.0)
   rails (= 4.2.4)
   rspec-rails (~> 3.2.1)
   sass-rails (~> 5.0)
