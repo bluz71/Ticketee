@@ -13,4 +13,12 @@ module ApplicationHelper
     # which is not desired.
     block.call if current_user.try(:admin?)
   end
+
+  def roles
+    roles_hash = {}
+    Role.available_roles.each do |role|
+      roles_hash[role.titleize] = role
+    end
+    roles_hash
+  end
 end
