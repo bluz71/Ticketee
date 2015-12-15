@@ -19,5 +19,5 @@
 # Ignore tags file.
 /tags
 
-# Ignore public/uploads
-public/uploads
+# Ignore uploads
+uploads
