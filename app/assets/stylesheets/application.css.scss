@@ -61,7 +61,7 @@ a.delete {
   }
 }
 
-/* Alert styling for the flash . */
+/* Alert styling for the flash. */
 
 .alert-notice {
   @extend .alert-success;
@@ -75,4 +75,10 @@ a.delete {
 
 form {
   max-width: 500px;
+}
+
+/* State styling. */
+
+#tickets li, #states li {
+  padding-bottom: 10px;
 }
