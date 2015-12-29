@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,6 +36,9 @@ group :development, :test do
 
   # Nicer 'rails console'.
   gem "irbtools-more", require: "irbtools/binding"
+
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
 group :development do
@@ -56,6 +57,11 @@ group :test do
   gem "email_spec", "~> 1.6.0"
 end
 
+group :production do
+  gem "pg", "~> 0.18.0"
+  gem 'rails_12factor', '0.0.3'
+end
+
 gem "bootstrap-sass", "~> 3.3"
 gem "font-awesome-rails", "~> 4.3"
 gem "simple_form", "~> 3.1.0"
@@ -64,4 +70,4 @@ gem "pundit", "~> 0.3.0"
 
 gem "carrierwave", "~> 0.10.0"
 gem "searcher", github: "radar/searcher"
-gem "fog", "~> 1.29.0"
+gem "fog", "~> 1.36.0"
