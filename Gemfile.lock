@@ -294,6 +294,7 @@ GEM
     os (0.9.6)
     paint (1.0.0)
     pg (0.18.4)
+    puma (2.15.3)
     pundit (0.3.0)
       activesupport (>= 3.0.0)
     rack (1.6.4)
@@ -424,6 +425,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg (~> 0.18.0)
+  puma (~> 2.15.0)
   pundit (~> 0.3.0)
   rails (= 4.2.4)
   rails_12factor (= 0.0.3)
