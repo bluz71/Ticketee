@@ -1,4 +1,8 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "dennisb@mailinator.com"
+  if Rails.env.production?
+    default from: "noreply@#{ENV["MAILGUN_DOMAIN"]}"
+  else
+    default from: "noreply@example.com"
+  end
   layout 'mailer'
 end
