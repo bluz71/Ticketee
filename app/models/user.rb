@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
 
   scope :excluding_archived, lambda { where(archived_at: nil) }
 
+  def generate_api_key
+    self.update_column(:api_key, SecureRandom.hex(16))
+  end
+
   def to_s
     "#{email} (#{admin? ? "Admin" : "User"})"
   end
