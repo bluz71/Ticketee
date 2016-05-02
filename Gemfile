@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.2.4"
+ruby "2.3.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -35,7 +35,7 @@ group :development, :test do
   gem "rspec-rails", "~> 3.2.1"
 
   # Nicer 'rails console'.
-  gem "irbtools-more", require: "irbtools/binding"
+  #gem "irbtools-more", require: "irbtools/binding"
 
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
